@@ -1,0 +1,474 @@
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+  <style>
+    html {
+      width: 316px;
+      height: 500px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+      -moz-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+      -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+      border: 0;
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .login-wrapper {
+      padding: 18px 22px 30px;
+    }
+
+    .login-wrapper .login-header {
+      margin-bottom: 22px;
+      text-align: center;
+      position: relative;
+    }
+
+    .login-wrapper h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1E1F21;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .login-wrapper .form-action {
+      margin-bottom: 23px;
+    }
+
+    .login-wrapper .form-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1E1F21;
+      margin-bottom: 5px;
+    }
+
+    .login-wrapper .form-control {
+      height: 40px;
+      border: 1px solid rgba(165, 165, 165, 0.7);
+      border-radius: 5px;
+      padding: 0 16px;
+      color: #1E1F21;
+      font-size: 16px;
+      color: #1E1F21;
+    }
+
+    .login-wrapper .form-control:focus {
+      border-color: #3C3C3C;
+    }
+
+    .login-wrapper .form-control::placehoder {
+      color: #1E1F21;
+      opacity: 0.4;
+    }
+
+    .login-wrapper .form-group {
+      margin-bottom: 15px;
+    }
+
+    .login-wrapper .btn-primary {
+      border-radius: 5px;
+      height: 40px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: #1AA499;
+      text-transform: uppercase;
+    }
+
+    .login-wrapper .close {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      font-size: 25px;
+      color: #162B2F;
+      opacity: 30%;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .login-wrapper .login-divider {
+      font-size: 11px;
+      color: #A5A5A6;
+      margin-bottom: 35px;
+    }
+
+    .login-wrapper .login-divider:before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background: #A5A5A6;
+      width: 160px;
+      left: 50%;
+      transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      top: 7px;
+    }
+
+    .login-wrapper .login-divider span {
+      background: #fff;
+      padding: 0 5px;
+    }
+
+    .login-wrapper .btn-asana {
+      border: 1px solid #F1F1F1;
+      border-radius: 5px;
+      background: #F4F4F4;
+      height: 40px;
+      font-size: 15px;
+      color: #333436;
+      font-weight: 500;
+    }
+
+    .login-wrapper .btn-asana:hover {
+      border-color: #F1F1F1;
+      background: #f4f4f4;
+    }
+
+    .login-wrapper .btn-asana:before,
+    .btn-areal:after {
+      content: '';
+      position: absolute;
+      left: 13px;
+      top: 10px;
+      width: 22px;
+      height: 20px;
+      background: url('Images/sprite.png');
+    }
+
+    .login-wrapper h2 {
+      font-size: 18px;
+      color: #1E1F21;
+      font-weight: 600;
+      margin-bottom: 21px;
+    }
+
+    .login-wrapper h4 {
+      color: #1E1F21;
+      font-size: 14px;
+    }
+
+    .login-wrapper .login-timing span {
+      font-size: 16px;
+      color: #505155;
+      font-weight: 600;
+    }
+
+    .login-wrapper .time-today {
+      padding-right: 40px;
+    }
+
+    .login-wrapper .time-week {
+      border-left: 1px solid #ddd;
+      padding: 3px 0 3px 40px;
+    }
+
+    .login-wrapper .login-timing {
+      margin-bottom: 21px;
+    }
+
+    .login-wrapper .areal-widget {
+      border-radius: 6px;
+      background: #F6F6F6;
+      padding: 3px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .login-wrapper .btn-areal {
+      border: 0;
+      border-bottom: 1px solid #E5E5E5;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1E1F21;
+      padding: 10px 10px 10px 45px;
+      margin-bottom: 11px;
+    }
+
+    .login-wrapper .btn-areal span {
+      width: 8px;
+      height: 8px;
+      border-width: 2px 2px 0 0;
+      border-style: solid;
+      border-color: #B6B6B6;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      margin-right: 10px;
+    }
+
+    .login-wrapper .areal-time {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1AA499;
+    }
+
+    .login-wrapper .areal-timing {
+      padding: 0 13px 12px;
+    }
+
+    .login-wrapper .areal-timing .btn {
+      width: 39px;
+      height: 39px;
+      border-radius: 4px;
+      text-align: center;
+      border: 0;
+    }
+
+    .login-wrapper .areal-timing .btn.btn-pause {
+      background: #CB4343;
+    }
+
+    .login-wrapper .areal-timing .btn.btn-play {
+      background: rgb(26, 164, 153);
+    }
+
+    .login-wrapper .btn-logout {
+      font-size: 14px;
+      font-weight: 400;
+      color: #333436;
+      opacity: 50%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .login-wrapper .btn-logout svg {
+      margin-right: 8px;
+    }
+
+    .areal-loader {
+      margin: auto;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: arealSpin 2s linear infinite;
+      /* Safari */
+      animation: arealSpin 2s linear infinite;
+    }
+
+    /* Safari */
+    @-webkit-keyframes arealSpin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes arealSpin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .login-wrapper .btn-primary.btn-loading {
+      font-size: 0;
+      position: relative;
+    }
+
+    .login-wrapper .btn-primary.btn-loading:before {
+      content: '';
+      position: absolute;
+      animation: button-animation 0.7s linear infinite;
+      -moz-animation: button-animation 0.7s linear infinite;
+      -webkit-animation: button-animation 0.7s linear infinite;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      top: 9px;
+      left: 47%;
+      border-right-color: transparent;
+    }
+
+    @keyframes button-animation {
+      from {
+        transform: rotate(0);
+        -moz-transform: rotate(0);
+        -webkit-transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    .btn-approve,
+    .btn-feedback {
+      padding: 9px 16px;
+      background: #F7F9F8;
+      box-shadow: 0px 3px 6px #0000000D;
+      border: 1px solid #E2E5E5;
+      border-radius: 6px;
+      font: normal normal 600 14px/19px Segoe UI;
+      color: #1E1F21;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+    }
+
+    .btn-approve span,
+    .btn-feedback span {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-approve:hover,
+    .btn-feedback:hover {
+      background: #E7F4ED;
+      border-color: #CDDEDE;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-wrapper">
+    <div class="login-header">
+      <a href="#">
+        <img src="Images/logo-areal-timer.svg" alt="Logo" width="58" height="63" />
+      </a>
+      <button class="close" id="closePopupId">x</button>
+    </div>
+
+    <div class="areal-loader" id="areal-loader"></div>
+
+    <div class="login-form" id="authSection">
+      <h1>Log in</h1>
+      <form class="form mb-0">
+        <div class="form-group">
+          <label for="arealUsername" class="form-label">Username</label>
+          <input type="email" class="form-control" id="arealUsername" aria-describedby="emailHelp">
+          <span id="username-valid-err">Required</span>
+        </div>
+
+        <div class="form-group">
+          <label for="arealPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="arealPassword">
+          <span id="password-valid-err">Required</span>
+        </div>
+        <div class="form-group" id="server-error">
+          <span id="server-error-msg">Required</span>
+        </div>
+        <div class="form-action">
+          <button type="button" id="loginBtn" class="btn btn-primary w-100">Login</button>
+        </div>
+      </form>
+      <div class="login-divider text-center position-relative text-uppercase">
+        <span class="position-relative">OR</span>
+      </div>
+      <button type="button" id="asanaLoginBtn" class="btn btn-asana position-relative w-100">Login with Asana</button>
+    </div>
+
+    <div id="dashboard" class="login-dashboard">
+      <h2 class="text-center text-capitilized" id="welcomeUserMessage"></h2>
+      <div class="login-timing d-flex align-items-center justify-content-center">
+        <div class="time-today text-center">
+          <h4 class="mb-0">Today:</h4>
+          <span id="totalTimeTrackMeSpan"></span>
+        </div>
+        <div class="time-week text-center">
+          <h4 class="mb-0">This week:</h4>
+          <span id="totalTimeTrackMeThisWeekSpan"></span>
+        </div>
+      </div>
+      <div class="areal-widget">
+        <button class="btn-areal w-100 d-flex justify-content-between position-relative align-items-center"
+          id="taskTitle"> <span></span></button>
+        <div class="areal-timing align-items-center d-flex justify-content-between">
+          <div class="areal-left">
+            <h4 class="mb-0">Timing now:</h4>
+            <span class="areal-time" id="popup-counter"></span>
+          </div>
+
+          <button class="btn btn-play" id="timerStartBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10.868" height="12.5" viewBox="0 0 10.868 12.5">
+              <g id="play" transform="translate(-9.004 -6.75)" opacity="0.9">
+                <path id="Path_78" data-name="Path 78"
+                  d="M10.259,19.25a1.2,1.2,0,0,1-.594-.159A1.336,1.336,0,0,1,9,17.925V8.075a1.334,1.334,0,0,1,.661-1.166,1.193,1.193,0,0,1,1.215.015L19.3,11.963a1.223,1.223,0,0,1,0,2.072l-8.42,5.041A1.206,1.206,0,0,1,10.259,19.25Z"
+                  fill="#fff"></path>
+              </g>
+            </svg>
+          </button>
+
+          <button class="btn btn-pause" id="timerStopBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11">
+              <g id="Group_194" data-name="Group 194" transform="translate(0)" opacity="0.9">
+                <rect id="Rectangle_156" data-name="Rectangle 156" width="4" height="11" rx="1" transform="translate(0)"
+                  fill="#fff" />
+                <rect id="Rectangle_157" data-name="Rectangle 157" width="4" height="11" rx="1" transform="translate(7)"
+                  fill="#fff" />
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div>
+        <button id="approve-timer" type="button" class="btn-approve">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16.762" height="18.557" viewBox="0 0 16.762 18.557">
+            <path id="Path_21" data-name="Path 21"
+              d="M8.527,19.533a13.471,13.471,0,0,1-4.053-.62,19.987,19.987,0,0,1-3.228-1.348c-.126-.065-.136-.119-.066-.237.39-.658.77-1.321,1.16-1.98a.16.16,0,0,0-.032-.229A8.119,8.119,0,0,1,.881,13.094a8.5,8.5,0,0,1-.837-2.9A8.362,8.362,0,0,1,1.569,4.475a7.928,7.928,0,0,1,1.067-1.22A8.495,8.495,0,0,1,5.342,1.548a8.149,8.149,0,0,1,2.15-.526,8.4,8.4,0,0,1,3.229.3,8.266,8.266,0,0,1,2.653,1.322,8.574,8.574,0,0,1,1.7,1.7,8.444,8.444,0,0,1,1.114,1.994,8.319,8.319,0,0,1,.056,5.9,7.935,7.935,0,0,1-1.6,2.664c-.03.033-.057.069-.085.1-.2.243-.2.246-.05.51.308.533.623,1.062.934,1.593.022.038.039.08.06.12.145.27.144.267-.125.406a19.469,19.469,0,0,1-2.7,1.158A14.347,14.347,0,0,1,10.2,19.4a10.16,10.16,0,0,1-1.67.136m-7-9.756h0c-.149,0-.3,0-.447,0-.1,0-.133.04-.118.139.021.132.031.266.046.4a7.21,7.21,0,0,0,.743,2.422,7.636,7.636,0,0,0,1.04,1.539c.074.086.111.113.184-.012.571-.989,1.15-1.974,1.726-2.96L6.277,8.6q1-1.718,2-3.436c.07-.12.119-.12.189,0q.426.726.848,1.454,1.013,1.737,2.026,3.473c.375.642.756,1.28,1.132,1.922q.657,1.125,1.308,2.255c.051.089.09.1.163.019a8.067,8.067,0,0,0,.746-1A7.445,7.445,0,0,0,15.4,11.8a7.633,7.633,0,0,0,.389-1.831c.014-.16,0-.186-.16-.187-.278,0-.557,0-.835,0-.115,0-.162-.047-.159-.161,0-.154,0-.308,0-.462,0-.2.011-.213.208-.214.268,0,.537,0,.805,0,.093,0,.155-.02.145-.133a7.636,7.636,0,0,0-.282-1.55,7.484,7.484,0,0,0-1.485-2.744c-.076-.088-.127-.1-.212-.014-.2.212-.416.413-.619.625-.073.076-.123.074-.194,0-.129-.138-.263-.271-.4-.4-.072-.068-.067-.116,0-.183.21-.2.413-.416.624-.619.084-.08.091-.134,0-.213a7.717,7.717,0,0,0-1.2-.833,7.563,7.563,0,0,0-3.07-.935c-.12-.011-.174.024-.171.153.006.278,0,.556,0,.834,0,.118-.039.175-.164.172q-.253-.007-.507,0c-.121,0-.17-.046-.168-.167,0-.278,0-.557,0-.835,0-.124-.045-.177-.168-.156-.279.047-.561.058-.84.114A7.566,7.566,0,0,0,3.515,3.719c-.081.068-.083.117-.007.191.214.207.421.422.635.63.067.065.079.114.005.183-.134.126-.264.256-.39.39-.071.075-.125.073-.2,0-.2-.21-.416-.414-.62-.624-.079-.081-.13-.071-.2.014A7.506,7.506,0,0,0,1.553,6.4,6.807,6.807,0,0,0,1.18,7.5,9.051,9.051,0,0,0,.963,8.778c-.013.133.024.168.147.166.283,0,.567,0,.85,0,.107,0,.155.044.153.151q0,.268,0,.536c0,.11-.051.151-.155.149-.144,0-.288,0-.432,0m6.82,8.887a9.983,9.983,0,0,0,1.544-.1,15.239,15.239,0,0,0,4.5-1.414c.1-.05.115-.087.056-.186-.291-.486-.574-.976-.859-1.465l-2.874-4.93Q9.59,8.638,8.464,6.707C8.4,6.6,8.367,6.583,8.3,6.7c-.182.319-.373.634-.558.951q-1.5,2.568-2.993,5.136Q3.532,14.873,2.31,16.954c-.07.118-.048.164.071.218a17.342,17.342,0,0,0,3.368,1.183,12.181,12.181,0,0,0,2.6.311"
+              transform="translate(0 -0.978)" fill="#1aa499" />
+          </svg>
+          <span>Approve Timer</span>
+        </button>
+        <button id="feedback" type="button" class="btn-feedback">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+            <g id="Group_441" data-name="Group 441" transform="translate(-1619.5 -450.5)" opacity="0.38">
+              <path id="Icon_feather-message-square" data-name="Icon feather-message-square"
+                d="M19.5,14.5a1.667,1.667,0,0,1-1.667,1.667h-10L4.5,19.5V6.167A1.667,1.667,0,0,1,6.167,4.5H17.833A1.667,1.667,0,0,1,19.5,6.167Z"
+                transform="translate(1615.5 446.5)" fill="none" stroke="#1e1f21" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1" />
+              <line id="Line_343" data-name="Line 343" x2="8" transform="translate(1623.5 455.5)" fill="none"
+                stroke="#1e1f21" stroke-linecap="round" stroke-width="1" />
+              <line id="Line_344" data-name="Line 344" x2="5" transform="translate(1623.5 458.5)" fill="none"
+                stroke="#1e1f21" stroke-linecap="round" stroke-width="1" />
+            </g>
+          </svg>
+          <span>Feedback</span>
+        </button>
+      </div>
+      <button type="button" id="logout" class="btn btn-logout">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14.369" height="13.033" viewBox="0 0 14.369 13.033">
+          <g id="logout_curved" transform="translate(0.5 0.5)">
+            <path id="Path_179" data-name="Path 179"
+              d="M10.889,8H8.256C5.957,8,6,11.008,6,14.017s-.043,6.017,2.256,6.017h2.632m8.273-6.017H10.137m9.025,0-3.008-3.008m3.008,3.008-3.008,3.008"
+              transform="translate(-6 -8)" fill="none" stroke="#99999a" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="1" />
+          </g>
+        </svg>
+        Logout
+      </button>
+    </div>
+  </div>
+
+  <script src="jquery-1.7.1.min.js"></script>
+  <script src="moment.js"></script>
+  <script src="config.js"></script>
+  <script src="common.js"></script>
+  <script src="serverAPI.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>

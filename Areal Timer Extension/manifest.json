@@ -1,0 +1,26 @@
+{  
+    "manifest_version": 3,  
+    "name": "Areal Timer",  
+    "description": "This extension is designed for Add Areal UI in Asana",  
+    "version": "2.8", 
+    "key":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk8fkSzOzIaN58NQynGdwq8O96JhRKUJ5LxXtEiKcS8rW2hrhW1R6Cck0LBGbn+ptgV+XUf/iF3TK2adjI+N+FKccJ+VzlfeONXX35RGdz0h+gKUmmBUncahorVQvdVsmmZwRKApATRQM+uLEbbFmh1fO57lHqxRWqtUs3Z5aaGgFRQ/vA26DN7+TCkCUNrcgRiBNd/uHZJBldGibQB1+8gFVwOTJnCq7qiwb2zJZzWfeZ1N2OacrWkHxF+CWqj2Z9DRwZfcKKOCXO7LIks4LIe5zGwjVMWjVCbYK9EoWkDQhgv54FNDsJf1ffCBGXig+MTVKtMZRXhrkNrZQvphyHwIDAQAB",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "128": "Images/Areal_Timer_Icon.png"
+      }
+    },
+    "permissions": ["storage", "activeTab", "tabs", "identity"],
+    "icons": {
+      "128": "Images/Areal_Timer_Icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts":[{
+      "matches":["https://*/*"],
+        "css":["button.css"],
+        "runAt" : "document_start",
+        "js": ["jquery-1.7.1.min.js", "moment.js", "config.js", "common.js", "serverAPI.js" ,"contentScript.js"]
+      }]
+} 
